@@ -57,7 +57,7 @@ export default function WatchlistPage() {
   };
 
   return (
-    <div className="p-6">
+    <div className="p-6 overflow-auto h-full">
       <div className="flex items-center justify-between mb-6">
         <div>
           <h1 className="text-2xl font-bold">Danh mục theo dõi</h1>
