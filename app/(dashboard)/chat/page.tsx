@@ -118,7 +118,7 @@ export default function ChatPage() {
   const isFirstMessage = messages.length === 1 && messages[0] === WELCOME_MESSAGE;
 
   return (
-    <div className="flex h-full w-full overflow-hidden absolute inset-0">
+    <div className="flex h-full w-full overflow-hidden">
       {/* History Sidebar */}
       {sidebarOpen && (
         <div className="w-60 border-r flex flex-col shrink-0 bg-muted/30">
