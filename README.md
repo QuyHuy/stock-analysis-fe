@@ -1,36 +1,55 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Stock Analysis FE
 
-## Getting Started
+Frontend cho hệ thống phân tích chứng khoán Việt Nam — xây dựng với Next.js, Firebase, và Gemini AI.
 
-First, run the development server:
+## Tính năng
+
+- **💬 Hỏi AI**: Chat với Gemini về cổ phiếu VN dựa trên dữ liệu thực
+- **📈 Cổ phiếu**: Tra cứu giá, biểu đồ 30 phiên của 50 mã phổ biến
+- **📌 Danh mục**: Lưu cổ phiếu theo dõi cá nhân
+- **🔔 Cảnh báo**: Đặt ngưỡng giá, nhận thông báo qua Telegram
+
+## Tech Stack
+
+- Next.js (App Router), TypeScript, Tailwind CSS
+- Shadcn UI, Recharts, lucide-react
+- Firebase Auth + Firestore (client SDK)
+- Axios với Firebase token auto-injection
+
+## Bắt đầu nhanh
 
 ```bash
+cp .env.local.example .env.local
+# Điền Firebase config vào .env.local
+npm install
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Xem `docs/setup.md` để biết chi tiết.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Deploy
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+Xem `docs/deploy.md` để hướng dẫn deploy lên Vercel.
 
-## Learn More
+## Cấu trúc thư mục
 
-To learn more about Next.js, take a look at the following resources:
+```
+app/
+  (auth)/login/          # Trang đăng nhập
+  (dashboard)/
+    chat/                # AI Chat
+    stocks/              # Danh sách + chi tiết cổ phiếu
+    watchlist/           # Danh mục theo dõi
+    alerts/              # Cảnh báo giá
+components/
+  chat/                  # ChatMessage, ChatInput
+  ui/                    # Shadcn components (không chỉnh sửa)
+lib/
+  firebase.ts            # Firebase config
+  api.ts                 # Axios client + API helpers
+  auth-context.tsx       # useAuth() hook
+```
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## Liên quan
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Backend: [stock-analysis-be](../stock-analysis-be)
