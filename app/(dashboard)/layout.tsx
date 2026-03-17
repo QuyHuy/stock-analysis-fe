@@ -14,6 +14,7 @@ import {
   BarChart2,
 } from "lucide-react";
 import { cn } from "@/lib/utils";
+import { ThemeToggle } from "@/components/theme-toggle";
 
 const navItems = [
   { href: "/chat", label: "Hỏi AI", icon: MessageSquare },
@@ -78,7 +79,11 @@ export default function DashboardLayout({
           ))}
         </nav>
         <Separator />
-        <div className="p-2">
+        <div className="p-2 space-y-1">
+          <div className="flex items-center justify-between px-2">
+            <span className="text-xs text-muted-foreground">Giao diện</span>
+            <ThemeToggle />
+          </div>
           <Button
             variant="ghost"
             className="w-full justify-start gap-2.5 h-9 text-muted-foreground hover:text-red-500"
