@@ -25,6 +25,8 @@ export const chatApi = {
       chat_id: chatId,
       history: history || [],
     }),
+  listHistory: () => apiClient.get("/chat/history"),
+  getMessages: (chatId: string) => apiClient.get(`/chat/history/${chatId}`),
 };
 
 export const stockApi = {
