@@ -16,8 +16,8 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="vi" suppressHydrationWarning>
-      <body className={inter.className}>
+    <html lang="vi" suppressHydrationWarning className="h-full">
+      <body className={`${inter.className} h-full`}>
         <AuthProvider>{children}</AuthProvider>
       </body>
     </html>
