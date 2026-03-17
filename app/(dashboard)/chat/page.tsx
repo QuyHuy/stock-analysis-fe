@@ -77,7 +77,7 @@ export default function ChatPage() {
             </p>
           </div>
           <Badge variant="outline" className="text-xs">
-            Gemini 2.0 Flash
+            Gemini 2.5 Flash
           </Badge>
         </div>
       </div>
