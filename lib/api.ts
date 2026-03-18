@@ -44,4 +44,10 @@ export const alertApi = {
   delete: (id: string) => apiClient.delete(`/alerts/${id}`),
 };
 
+export const syncApi = {
+  createJob: (params?: { full_market?: boolean }) =>
+    apiClient.post("/sync/jobs", null, { params }),
+  getJob: (jobId: string) => apiClient.get(`/sync/jobs/${jobId}`),
+};
+
 export default apiClient;
